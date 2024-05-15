@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->boolean('status')->default(1);
+            /** Satus = True = Showfront end if false no show front end*/
+            $table->boolean('show_at_home')->default(0);
             $table->timestamps();
         });
     }

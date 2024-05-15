@@ -96,6 +96,6 @@ class SliderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+    
     }
 }
