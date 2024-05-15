@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminManagementController;
 use App\Http\Controllers\Frontend\DashboardController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\ProfileController;
@@ -28,6 +29,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
     Route::post('profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar.update');
 });
+
 
 Route::get('/', [FrontendController::class, 'index'])->name('home');
 

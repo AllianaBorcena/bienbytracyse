@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminManagementController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
@@ -30,5 +31,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /**Product Category Route */
     Route::resource('category', CategoryController::class);
 
+    /** Sir Requirement Admin Management T-T */
+    /**Product Category Route */
+    Route::resource('admin-management', AdminManagementController::class);
 
 });
