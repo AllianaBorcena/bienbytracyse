@@ -51,8 +51,3 @@ We welcome contributions to our project! To contribute, follow these steps:
 4. Push to the branch: `git push origin feature`.
 5. Submit a pull request.
 
-#### License:
-This project is licensed under the [MIT License](LICENSE).
-
-Feel free to customize this README further to suit your project's specific needs.
-!
