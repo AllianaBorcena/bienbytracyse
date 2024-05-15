@@ -1,7 +1,7 @@
-### Project Name: Laravel CMS
+### Project Name: Tracy - Partial E-commerce Laravel CMS
 
 #### Overview:
-Welcome to our Laravel CMS repository! This project serves as a comprehensive content management system (CMS) developed using the Laravel framework. Our CMS offers a range of functionalities, including user authentication, profile/account management, slider updates, and category changes, enabling seamless content management for website administrators.
+Welcome to Tracy, our partial e-commerce Laravel CMS repository! Tracy is a project aimed at providing essential content management functionalities, particularly tailored for e-commerce platforms, built using the Laravel framework. Tracy facilitates user authentication, profile/account management, slider updates, category changes, and other features, streamlining content management for e-commerce website administrators.
 
 #### Technologies Used:
 - Laravel Framework
@@ -17,7 +17,7 @@ Welcome to our Laravel CMS repository! This project serves as a comprehensive co
 4. **Category Changes:** Admins can modify categories within the CMS.
 
 #### Installation:
-To get started with our Laravel CMS, follow these steps:
+To get started with Tracy - Partial E-commerce Laravel CMS, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/2302-CSCC22-A/groupG.git`
 2. Navigate to the project directory: `cd groupG`
@@ -35,12 +35,12 @@ To get started with our Laravel CMS, follow these steps:
 5. As an admin, manage sliders and categories through the CMS.
 
 Admin Account:
-admin@gmail.com 
-Password
+Email: admin@gmail.com 
+Password: Password
 
 User Account:
-user@gmail.com  
-Password
+Email: user@gmail.com  
+Password: Password
 
 #### Contribution:
 We welcome contributions to our project! To contribute, follow these steps:
@@ -54,4 +54,5 @@ We welcome contributions to our project! To contribute, follow these steps:
 #### License:
 This project is licensed under the [MIT License](LICENSE).
 
-Feel free to customize this README further to suit your project's specific needs!
+Feel free to customize this README further to suit your project's specific needs.
+!
