@@ -4,10 +4,13 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminManagementController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\ProductGalleryController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Models\Category;
+use App\Models\ProductGallery;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -34,5 +37,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /** Sir Requirement Admin Management T-T */
     /**Product Category Route */
     Route::resource('admin-management', AdminManagementController::class);
+
+    /**Product Make */
+    Route::resource('product',ProductController::class);
+
+    /**Product Gallery Route */
+    Route::get('product-gallery/{product}', [ProductGalleryController::class, 'index'])->name('product-gallery.show-index');
+    Route::resource('product-gallery', ProductGalleryController::class);
+
 
 });
