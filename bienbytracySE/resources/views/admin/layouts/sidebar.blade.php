@@ -53,6 +53,9 @@
             </li>
 
             <li class="menu-header">Starter</li>
+            @if (auth()->user()->id === 1)
+                <li><a class="nav-link" href="{{ route('admin.admin-management.index') }}"><i class="far fa-square"></i><span>Admin Role Management</span></a></li>
+            @endif
 
             <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="far fa-square"></i> <span>Slider</span></a></li>
 
@@ -66,6 +69,8 @@
                     <span>Manage Menu</span></a>
                 <ul class = "dropdown-menu">
                     <li><a class="nav-link" href="{{ route('admin.category.index') }}">Product Categories</a></li>
+
+
 
             {{-- <li><a class="nav-link" href="{{ route('admin.slider.index') }}"><i class="far fa-square"></i> <span>Blank Page</span></a></li> --}}
             {{-- <ul class= --}}
