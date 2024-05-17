@@ -20,5 +20,9 @@ class FrontendController extends Controller
     ));
 
     }
+
+    function showProduct(string $slug): View {
+        return view ('frontend.pages.product-view');
+    }
 }
 
