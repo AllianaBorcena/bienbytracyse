@@ -55,7 +55,7 @@
 
     @include('frontend.layouts.footer')
 
-    <div class="fp__scroll_btn"><span style="color: rgb(255,255,255);"> go to top </span></div>
+    <div style="color: rgb(0,0,0);background: rgb(140,89,43);" class="fp__scroll_btn"><span style="color: rgb(255,255,255);font-weight: bold;"> go to top </span></div>
     <script src="{{ asset('frontend/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>

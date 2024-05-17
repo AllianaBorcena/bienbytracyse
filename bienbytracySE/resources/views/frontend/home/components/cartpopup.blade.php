@@ -9,14 +9,14 @@
                         <h4 class="price">$320.00 <del>$350.00</del></h4>
                         <div class="details_size">
                             <h5>select size</h5>
-                            <div class="form-check"><input type="radio" checked="" class="form-check-input" id="large" name="flexRadioDefault"><label class="form-label form-check-label" for="large"> large <span>+ $350</span></label></div>
-                            <div class="form-check"><input type="radio" class="form-check-input" id="medium" name="flexRadioDefault"><label class="form-label form-check-label" for="medium"> medium <span>+ $250</span></label></div>
-                            <div class="form-check"><input type="radio" class="form-check-input" id="small" name="flexRadioDefault"><label class="form-label form-check-label" for="small"> small <span>+ $150</span></label></div>
+                            <div class="form-check"><input type="radio" checked="" class="form-check-input" id="large" name="flexRadioDefault"><label class="form-label form-label form-check-label" for="large"> large <span>+ $350</span></label></div>
+                            <div class="form-check"><input type="radio" class="form-check-input" id="medium" name="flexRadioDefault"><label class="form-label form-label form-check-label" for="medium"> medium <span>+ $250</span></label></div>
+                            <div class="form-check"><input type="radio" class="form-check-input" id="small" name="flexRadioDefault"><label class="form-label form-label form-check-label" for="small"> small <span>+ $150</span></label></div>
                         </div>
                         <div class="details_extra_item">
                             <h5>select option <span>(optional)</span></h5>
-                            <div class="form-check"><input type="checkbox" class="form-check-input" id="coca-cola" value=""><label class="form-label form-check-label" for="coca-cola"> coca-cola <span>+ $10</span></label></div>
-                            <div class="form-check"><input type="checkbox" class="form-check-input" id="7up" value=""><label class="form-label form-check-label" for="7up"> 7up <span>+ $15</span></label></div>
+                            <div class="form-check"><input type="checkbox" class="form-check-input" id="coca-cola" value=""><label class="form-label form-label form-check-label" for="coca-cola"> coca-cola <span>+ $10</span></label></div>
+                            <div class="form-check"><input type="checkbox" class="form-check-input" id="7up" value=""><label class="form-label form-label form-check-label" for="7up"> 7up <span>+ $15</span></label></div>
                         </div>
                         <div class="details_quentity">
                             <h5>select quentity</h5>

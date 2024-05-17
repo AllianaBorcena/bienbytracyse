@@ -4362,7 +4362,7 @@ textarea.form-control-lg {
 }
 
 .nav-link:focus, .nav-link:hover {
-  color: var(--bs-nav-link-hover-color);
+  /*color: #101214;*/
 }
 
 .nav-link.disabled {

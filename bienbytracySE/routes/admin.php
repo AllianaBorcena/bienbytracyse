@@ -6,11 +6,15 @@ use App\Http\Controllers\Admin\AdminManagementController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductGalleryController;
+use App\Http\Controllers\Admin\ProductIcingController;
+use App\Http\Controllers\Admin\ProductionOptionController;
+use App\Http\Controllers\Admin\ProductShapeController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Models\Category;
 use App\Models\ProductGallery;
+use App\Models\ProductOption;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
@@ -44,6 +48,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /**Product Gallery Route */
     Route::get('product-gallery/{product}', [ProductGalleryController::class, 'index'])->name('product-gallery.show-index');
     Route::resource('product-gallery', ProductGalleryController::class);
+
+    /**Product Icing Route */
+    Route::get('product-icing/{product}', [ProductIcingController::class, 'index'])->name('product-icing.show-index');
+    Route::resource('product-icing', ProductIcingController::class);
+    Route::resource('product-option', ProductionOptionController::class);
+
 
 
 });

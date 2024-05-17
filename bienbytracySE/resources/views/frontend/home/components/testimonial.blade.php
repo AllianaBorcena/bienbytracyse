@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="fp__single_testimonial_body">
-                        <p class="feedback" style="color: rgb(0,0,0);">I love the cakes</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+                        <p class="feedback" style="color:rgb(0,0,0);">I love the cakes</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                     <div class="fp__single_testimonial_body">
-                        <p class="feedback" style="color: rgb(0,0,0);">Bien By tracy is really nice</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+                        <p class="feedback" style="color:rgb(0,0,0);">Bien By tracy is really nice</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="fp__single_testimonial_body">
-                        <p class="feedback" style="color: rgb(0,0,0);">I loved the aesthetic cake</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+                        <p class="feedback" style="color:rgb(0,0,0);">I loved the aesthetic cake</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="fp__single_testimonial_body">
-                        <p class="feedback" style="color: rgb(0,0,0);">I love the cake :D</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
+                        <p class="feedback" style="color:rgb(0,0,0);">I love the cake :D</p><span class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i></span>
                     </div>
                 </div>
             </div>
