@@ -82,34 +82,31 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         return view('admin.product.edit', compact('categories', 'product'));
     }
-
-
+    
     /**
      * Update the specified resource in storage.
      */
     public function update(ProductUpdateRequest $request, string $id)
     {
-        $product = Product::findorFail($id);
+        $product=Product::findOrFail($id);
 
-        $imagePath = $this->uploadImage($request, 'image', $product->thumb_img);
+                $imagePath = $this->uploadImage($request, 'image', $product->thumb_img);
+                $product->thumb_img = !empty($imagePath) ? $imagePath : $product->thumb_img;
+                $product->name = $request->name;
+                $product->category_id = $request->category;
+                $product->price = $request->price;
+                $product->short_description = $request->short_description;
+                $product->long_description = $request->long_description;
+                $product->sku = $request->sku;
+                $product->seo_title = $request->seo_title;
+                $product->seo_description = $request->seo_description;
+                $product->show_at_home = $request->show_at_home;
+                $product->status = $request->status;
+                $product->save();
 
-        $product->thumb_img =!empty($imagePath) ? $imagePath : $product -> thumb_img;
-        $product->name = $request->name; //Cake Buttercream
-        $product->slug = generateUniqueSlug('Product', $request->name);//Cake-buttercream
-        $product->category_id= $request->category;
-        $product->price = $request->price;
-        $product->short_description = $request->short_description;
-        $product->long_description = $request->long_description;
-        $product->sku = $request->sku;
-        $product->seo_title = $request->seo_title;
-        $product->seo_description = $request->seo_description;
-        $product->show_at_home = $request->show_at_home;
-        $product->status = $request->status;
-        $product->save();
+                toastr()->success('Update Successfully');
+                return to_route('admin.product.index');
 
-
-        toastr()->success('Product Updated Successfully');
-        return to_route('admin.product.index');
     }
 
     /**

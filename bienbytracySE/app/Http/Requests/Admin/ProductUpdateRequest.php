@@ -22,17 +22,16 @@ class ProductUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-                'image' => ['nullable','required', 'image', 'max:3000'],
-                'name' => ['required', 'max:255'],
-                'category' => ['required', 'integer'],
-                'price' => ['required', 'numeric'],
-                'short_description' => ['required', 'max:500'],
-                'long_description' => ['required'],
-                'sku' => ['nullable', 'max:255'],
-                'seo_title' => ['nullable', 'max:255'],
-                'seo_description' => ['nullable', 'max:255'],
-                'show_at_home' => ['boolean'],
-                'status' => ['required','boolean']
+            'image' => ['nullable', 'image', 'max:3000'],
+            'name' => ['required', 'max:255'],
+            'category' => ['required', 'integer'],
+            'short_description' => ['required', 'max:500'],
+            'long_description' => ['required'],
+            'sku' => ['nullable', 'max:255'],
+            'seo_title' => ['nullable', 'max:255'],
+            'seo_description' => ['nullable', 'max:255'],
+            'show_at_home' => ['boolean'],
+            'status' => ['required','boolean']
         ];
     }
 }
