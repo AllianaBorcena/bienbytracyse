@@ -3650,8 +3650,8 @@ footer {
 }
 
 .details_size .form-check input:checked, .details_extra_item .form-check input:checked {
-  background-color: var(--colorPrimary);
-  border-color: var(--colorPrimary);
+  background-color: #8c582a;
+  border-color: #8c582a;
 }
 
 .details_size .form-check label, .details_extra_item .form-check label {
@@ -3675,7 +3675,7 @@ footer {
   width: 35px;
   height: 35px;
   font-size: 15px;
-  color: #fff;
+  color: #8c582a;
   padding: 0;
   border-radius: 3px;
   -webkit-border-radius: 3px;

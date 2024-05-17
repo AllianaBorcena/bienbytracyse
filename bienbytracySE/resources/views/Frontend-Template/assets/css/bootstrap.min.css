@@ -2877,17 +2877,13 @@ textarea.form-control-lg {
   height: 1em;
   margin-top: .25em;
   vertical-align: top;
-  background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  border: 1px solid rgba(0,0,0,.25);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  -webkit-print-color-adjust: exact;
   color-adjust: exact;
-  print-color-adjust: exact;
 }
 
 .form-check-input[type=checkbox] {
@@ -2909,8 +2905,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-  background-color: #0d6efd;
-  border-color: #0d6efd;
+  background-color: #000000;
+  border-color: #0b0c0d;
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -3333,7 +3329,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input.is-valid ~ .form-check-label, .was-validated .form-check-input:valid ~ .form-check-label {
-  color: #198754;
+  color: #000000;
 }
 
 .form-check-inline .form-check-input ~ .valid-feedback {

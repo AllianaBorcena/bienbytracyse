@@ -19,6 +19,14 @@ class Product extends Model
         return $this->hasMany(ProductGallery::class);
     }
 
+    function productIcing(): HasMany{
+        return $this->hasMany(ProductIcing::class);
+    }
+
+    function productOption():HasMany{
+        return $this->hasMany(ProductOption::class);
+    }
+
 
 
 

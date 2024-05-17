@@ -52,52 +52,46 @@
                         <i class="far fa-star"></i>
                         <span>(201)</span>
                     </p>
-                    <h3 class="price">$320.00 <del>$350.00</del> </h3>
-                    <p class="short_description">Pizza is a savory dish of Italian origin consisting of a usually
-                        round, flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often
-                        various other ingredients, which is then baked at a high temperature, traditionally in a
-                        wood-fired oven. A small pizza is sometimes called a pizzetta.</p>
+                    <h3 class="price">₱ {{ $product -> price }}
+                        <del></del> </h3>
+                    <p class="short_description">{!! $product -> short_description !!}</p>
 
                     <div class="details_size">
-                        <h5>select size</h5>
+                        <h5>Select Icing</h5>
+
+                        @foreach ($product->productIcing as $productIcing)
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="large" checked>
-                            <label class="form-check-label" for="large">
-                                large <span>+ $350</span>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="icing-{{
+                                $productIcing }}" checked style="appearance: none; width: 20px; height: 20px; border: 2px solid #8c582a; border-radius: 50%; outline: none; margin-right: 5px; background-color: #8c582a;">
+                            <label class="form-check-label" for="icing-{{ $productIcing }}">
+                                {{ $productIcing -> name }} <span> +₱ {{ $productIcing -> price }}</span>
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="medium">
-                            <label class="form-check-label" for="medium">
-                                medium <span>+ $250</span>
-                            </label>
+
+
+                        @endforeach
+
+
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="small">
-                            <label class="form-check-label" for="small">
-                                small <span>+ $150</span>
-                            </label>
-                        </div>
-                    </div>
 
                     <div class="details_extra_item">
                         <h5>select option <span>(optional)</span></h5>
+                        @foreach ($product->productOption as $productOption)
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="coca-cola">
-                            <label class="form-check-label" for="coca-cola">
-                                coca-cola <span>+ $10</span>
+                            <input class="form-check-input" type="checkbox" value="" id="option-{{
+                                $productOption->id }}" style="background-color: #8c582a;">
+                            <label class="form-check-label" for="option-{{
+                                $productOption->id }}">
+                                {{ $productOption->name }} <span>+₱ {{ $productOption->price }}</span>
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="7up">
-                            <label class="form-check-label" for="7up">
-                                7up <span>+ $15</span>
-                            </label>
-                        </div>
+                    @endforeach
+
+
                     </div>
 
                     <div class="details_quentity">
-                        <h5>select quentity</h5>
+                        <h5>select Quantity</h5>
                         <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
                             <div class="quentity_btn">
                                 <button class="btn btn-danger"><i class="fal fa-minus"></i></button>
