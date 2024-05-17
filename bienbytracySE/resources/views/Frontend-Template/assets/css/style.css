@@ -1530,7 +1530,7 @@ button {
 ============================ */
 
 /* ============================
-    OFFER SLIDER START 
+    OFFER SLIDER START
 ============================ */
 
 .fp__add_slider {
@@ -4989,9 +4989,6 @@ CHECKOUT PAGE START
   margin-right: 10px;
 }
 
-.nav-pills .nav-link.active, .nav-pills .nav-link:hover {
-  background: #292b750a !important;
-}
 
 .fp__dashboard_menu button.active::after {
   position: absolute;
