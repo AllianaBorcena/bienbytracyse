@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function(){
 });
 
 
-/** Product Pages */
+/** Product Page Lik Cake Order here */
 Route::get('/product', [FrontendController::class, 'product'])->name('product.index');
 
 
