@@ -14,3 +14,4 @@ class FrontendController extends Controller
         return view('frontend.home.index', compact('sliders'));
     }
 }
+

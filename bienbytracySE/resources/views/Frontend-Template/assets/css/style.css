@@ -398,8 +398,8 @@ button {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #f8cfc9;
-  color: var(--colorWhite);
+  background: #a47c4e;
+  color: #fffaf5;
   line-height: 20px;
   font-size: 12px;
   text-align: center;
@@ -1908,7 +1908,7 @@ button {
 .fp__single_testimonial::after {
   position: absolute;
   content: "";
-  background: url(../../assets/img/quot.png);
+  background: url(../../../assets/img/quot.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -2456,7 +2456,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .fp__breadcrumb_text ul li a {
@@ -4707,7 +4706,7 @@ CHECKOUT PAGE START
 }
 
 .accordion-button::after {
-  background-image: url(../../assets/img/faq_plus.jpg);
+  background-image: url(../../../assets/img/faq_plus.jpg);
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -4716,7 +4715,7 @@ CHECKOUT PAGE START
 }
 
 .accordion-button:not(.collapsed)::after {
-  background-image: url(../../assets/img/faq_minus.jpg);
+  background-image: url(../../../assets/img/faq_minus.jpg);
 }
 
 .fp__details_video h4 {
@@ -6281,7 +6280,7 @@ CHECKOUT PAGE START
 .fp__single_testimonial2::after {
   position: absolute;
   content: "";
-  background: url(../../assets/img/quot.png);
+  background: url(../../../assets/img/quot.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

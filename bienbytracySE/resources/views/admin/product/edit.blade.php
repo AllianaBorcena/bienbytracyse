@@ -3,15 +3,14 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>Edit Product</h1>
+        <h1>Product</h1>
     </div>
 
     <div class="card card-primary">
         <div class="card-header">
-            <h4>Edit Product</h4>
+            <h4>Update Product</h4>
 
         </div>
-
         <div class="card-body">
             <form action="{{ route('admin.product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -35,54 +34,54 @@
                     <select name="category" class="form-control select2" id="" >
                         <option value="">select</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            <option @selected($product->category_id === $category->id) value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Price</label>
-                    <input type="text" name="price" class="form-control" value="{{ old('price') }}">
+                    <input type="text" name="price" class="form-control" value="{{ $product->price }}">
                 </div>
 
                 <div class="form-group">
                     <label>Short Description</label>
-                    <textarea name="short_description" class="form-control" id="">{{ old('short_description') }}</textarea>
+                    <textarea name="short_description" class="form-control" id="">{!! $product->short_description !!}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Long Description</label>
-                    <textarea name="long_description" class="form-control summernote" id="">{{ old('long_description') }}</textarea>
+                    <textarea name="long_description" class="form-control summernote" id="">{!! $product->long_description !!}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Sku</label>
-                    <input type="text" name="sku" class="form-control" value="{{ old('sku') }}">
+                    <input type="text" name="sku" class="form-control" value="{{ $product->sku }}">
                 </div>
 
                 <div class="form-group">
                     <label>Seo Title</label>
-                    <input type="text" name="seo_title" class="form-control" value="{{ old('seo_title') }}">
+                    <input type="text" name="seo_title" class="form-control" value="{{ $product->seo_title }}">
                 </div>
 
                 <div class="form-group">
                     <label>Seo Description</label>
-                    <textarea name="seo_description" class="form-control" id="">{{ old('seo_description') }}</textarea>
+                    <textarea name="seo_description" class="form-control" id="">{!! $product->seo_description !!}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Show at Home</label>
                     <select name="show_at_home" class="form-control" id="">
-                        <option value="1">Yes</option>
-                        <option selected value="0">No</option>
+                        <option @selected($product->show_at_home === 1) value="1">Yes</option>
+                        <option @selected($product->show_at_home === 0) value="0">No</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Status</label>
                     <select name="status" class="form-control" id="">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
+                        <option @selected($product->status === 1) value="1">Active</option>
+                        <option @selected($product->status === 0) value="0">Inactive</option>
                     </select>
                 </div>
 
@@ -92,6 +91,7 @@
     </div>
 </section>
 @endsection
+
 @push('scripts')
     <script>
         $(document).ready(function(){
@@ -103,4 +103,3 @@
         })
     </script>
 @endpush
-
