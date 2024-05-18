@@ -2,7 +2,7 @@
     <div class="container"><a class="navbar-brand" href="{{ route('home') }}"><img class="img-fluid" src="{{ asset('frontend/img/logo.png') }}" alt="Bien By Tracy"></a><button data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><i class="far fa-bars" style="font-family:'Font Awesome 5 Brands';"></i></button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav m-auto">
-                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}" style="color: #8c592b;">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('home') }}" >Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('product.index') }}">Order Cakes Here</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">contact Us</a></li>
