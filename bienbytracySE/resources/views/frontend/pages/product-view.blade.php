@@ -56,6 +56,7 @@
                         <del></del> </h3>
                     <p class="short_description">{!! $product -> short_description !!}</p>
 
+                    @if ($product->productIcing()->exists())
                     <div class="details_size">
                         <h5>Select Icing</h5>
 
@@ -67,13 +68,11 @@
                                 {{ $productIcing -> name }} <span> +₱ {{ $productIcing -> price }}</span>
                             </label>
                         </div>
-
-
                         @endforeach
+                    </div>
+                    @endif
 
-
-                        </div>
-
+                    @if ($product->productOption()->exists())
                     <div class="details_extra_item">
                         <h5>select option <span>(optional)</span></h5>
                         @foreach ($product->productOption as $productOption)
@@ -86,9 +85,8 @@
                             </label>
                         </div>
                     @endforeach
-
-
                     </div>
+                    @endif
 
                     <div class="details_quentity">
                         <h5>select Quantity</h5>
@@ -98,7 +96,7 @@
                                 <input type="text" placeholder="1">
                                 <button class="btn btn-success"><i class="fal fa-plus"></i></button>
                             </div>
-                            <h3>$320.00</h3>
+                            <h3>Php 320.00</h3>
                         </div>
                     </div>
                     <ul class="details_button_area d-flex flex-wrap">
@@ -125,58 +123,7 @@
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                             aria-labelledby="pills-home-tab" tabindex="0">
                             <div class="menu_det_description">
-                                <p>Ipsum dolor, sit amet consectetur adipisicing elit. Doloribus consectetur
-                                    ullam in? Beatae, dolorum ad ea deleniti ratione voluptatum similique omnis
-                                    voluptas tempora optio soluta vero veritatis reiciendis blanditiis architecto.
-                                    Debitis nesciunt inventore voluptate tempora ea incidunt iste, corporis, quo
-                                    cumque facere doloribus possimus nostrum sed magni quasi, assumenda autem!
-                                    Repudiandae nihil magnam provident illo alias vero odit repellendus, ipsa nemo
-                                    itaque. Aperiam fuga, magnam quia illum minima blanditiis tempore. vero
-                                    veritatis reiciendis blanditiis architecto. Debitis nesciunt inventore voluptate
-                                    tempora ea incidunt iste, corporis, quo cumque facere doloribus possimus nostrum
-                                    sed magni quasi</p>
-                                <ul>
-                                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-                                        consectetur ullam in</li>
-                                    <li>Dolor sit amet consectetur adipisicing elit. Earum itaque nesciunt.</li>
-                                    <li>Corporis, quo cumque facere doloribus possimus nostrum sed magni quasi.</li>
-                                    <li>Reiciendis blanditiis architecto. Debitis nesciunt inventore voluptate
-                                        tempora ea.</li>
-                                    <li>Incidunt iste, corporis, quo cumque facere doloribus possimus
-                                        nostrum sed magni quasi</li>
-                                    <li>Architecto. Debitis nesciunt inventore voluptate tempora ea incidunt iste
-                                        corporis.</li>
-                                    <li>Earum itaque nesciunt dolor laudantium placeat sed velit aspernatur.</li>
-                                    <li>Laudantium placeat sed velit aspernatur, nobis quos quibusdam distinctio
-                                        voluptatum.</li>
-                                </ul>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum itaque nesciunt
-                                    dolor laudantium placeat sed velit aspernatur, nobis quos quibusdam distinctio
-                                    voluptatum officia vel sapiente enim, reprehenderit impedit beatae molestias
-                                    dolorum. A laborum consectetur sed quis exercitationem optio consequatur, unde
-                                    neque est odit, pariatur quae incidunt quasi dolorem nihil aliquid ut veritatis
-                                    porro eaque cupiditate voluptatem vel ad! Asperiores, praesentium. sit amet
-                                    consectetur adipisicing elit. Doloribus consectetur ullam in? Beatae, dolorum ad
-                                    ea deleniti ratione voluptatum similique omnis voluptas tempora optio soluta</p>
-
-                                <ul>
-                                    <li>Reiciendis blanditiis architecto. Debitis nesciunt inventore voluptate
-                                        tempora ea.</li>
-                                    <li>Incidunt iste, corporis, quo cumque facere doloribus possimus
-                                        nostrum sed magni quasi</li>
-                                    <li>Architecto. Debitis nesciunt inventore voluptate tempora ea incidunt iste
-                                        corporis.</li>
-                                    <li>Earum itaque nesciunt dolor laudantium placeat sed velit aspernatur.</li>
-                                    <li>Laudantium placeat sed velit aspernatur, nobis quos quibusdam distinctio
-                                        voluptatum.</li>
-                                </ul>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus consectetur
-                                    ullam in? Beatae, dolorum ad ea deleniti ratione voluptatum similique omnis
-                                    voluptas tempora optio soluta vero veritatis reiciendis blanditiis architecto.
-                                    Debitis nesciunt inventore voluptate tempora ea incidunt iste, corporis, quo
-                                    cumque facere doloribus possimus nostrum sed magni quasi, assumenda autem!
-                                    Repudiandae nihil magnam provident illo alias vero odit repellendus, ipsa nemo
-                                    itaque. Aperiam fuga, magnam quia illum minima blanditiis tempore.</p>
+                                {!! $product->long_description !!}
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-contact" role="tabpanel"
@@ -293,85 +240,37 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="fp__related_menu mt_90 xs_mt_60">
-            <h2>related item</h2>
-            <div class="row related_product_slider">
-                <div class="col-xl-3 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__menu_item">
-                        <div class="fp__menu_item_img"><img class="img-fluid w-100" src="assets/img/menu2_img_6.jpg" alt="menu"><a class="category" href="#" style="color: rgb(0,0,0);font-weight: bold;font-family: 'Open Sans', sans-serif;">Biryani</a></div>
-                        <div class="fp__menu_item_text">
-                            <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>514</span></p><a class="title" href="menu_details.html" style="color: rgb(0,0,0);">Hyderabadi biryani</a>
-                            <ul class="d-flex flex-wrap" style="margin-left: 56px;">
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-eye"></i></a></li>
-                            </ul>
-                            <h5 class="price">₱70.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__menu_item">
-                        <div class="fp__menu_item_img"><img class="img-fluid w-100" src="assets/img/menu2_img_6.jpg" alt="menu"><a class="category" href="#" style="color: rgb(0,0,0);font-weight: bold;font-family: 'Open Sans', sans-serif;">Biryani</a></div>
-                        <div class="fp__menu_item_text">
-                            <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>514</span></p><a class="title" href="menu_details.html" style="color: rgb(0,0,0);">Hyderabadi biryani</a>
-                            <ul class="d-flex flex-wrap" style="margin-left: 56px;">
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
-                                <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-eye"></i></a></li>
-                            </ul>
-                            <h5 class="price">₱70.00</h5>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 wow fadeInUp" data-wow-duration="1s">
-                        <div class="fp__menu_item">
-                            <div class="fp__menu_item_img"><img class="img-fluid w-100" src="assets/img/menu2_img_6.jpg" alt="menu"><a class="category" href="#" style="color: rgb(0,0,0);font-weight: bold;font-family: 'Open Sans', sans-serif;">Biryani</a></div>
-                            <div class="fp__menu_item_text">
-                                <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>514</span></p><a class="title" href="menu_details.html" style="color: rgb(0,0,0);">Hyderabadi biryani</a>
-                                <ul class="d-flex flex-wrap" style="margin-left: 56px;">
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-eye"></i></a></li>
-                                </ul>
-                                <h5 class="price">₱70.00</h5>
-                            </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__menu_item">
-                                <div class="fp__menu_item_img"><img class="img-fluid w-100" src="assets/img/menu2_img_6.jpg" alt="menu"><a class="category" href="#" style="color: rgb(0,0,0);font-weight: bold;font-family: 'Open Sans', sans-serif;">Biryani</a></div>
-                                <div class="fp__menu_item_text">
-                                    <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>514</span></p><a class="title" href="menu_details.html" style="color: rgb(0,0,0);">Hyderabadi biryani</a>
-                                    <ul class="d-flex flex-wrap" style="margin-left: 56px;">
-                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
-                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
-                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-eye"></i></a></li>
-                                    </ul>
-                                    <h5 class="price">₱70.00</h5>
-                                </div>
-                                </div>
-                            </div>
+
+                    @if (count($relatedProducts)>0)
+                    <div class="fp__related_menu mt_90 xs_mt_60">
+                        <h2>related item</h2>
+                        <div class="row related_product_slider">
+                            @foreach ($relatedProducts as $relatedProduct)
                             <div class="col-xl-3 wow fadeInUp" data-wow-duration="1s">
                                 <div class="fp__menu_item">
-                                    <div class="fp__menu_item_img"><img class="img-fluid w-100" src="assets/img/menu2_img_6.jpg" alt="menu"><a class="category" href="#" style="color: rgb(0,0,0);font-weight: bold;font-family: 'Open Sans', sans-serif;">Biryani</a></div>
+                                    <div class="fp__menu_item_img">
+                                        <img class="img-fluid w-100" src="{{ asset($relatedProduct->thumb_img) }}" alt="{{ $relatedProduct->name }}">
+                                        <a class="category" href="#" style="color: rgb(0,0,0);font-weight: bold;font-family: 'Open Sans', sans-serif;">{{ @$relatedProduct->category->name }}</a></div>
                                     <div class="fp__menu_item_text">
-                                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>514</span></p><a class="title" href="menu_details.html" style="color: rgb(0,0,0);">Hyderabadi biryani</a>
+                                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>514</span></p>
+                                        <a class="title" href="{{ route('product.show', $relatedProduct ->slug)}}" style="color: rgb(0,0,0);">{!! $relatedProduct->name !!}</a>
                                         <ul class="d-flex flex-wrap" style="margin-left: 56px;">
                                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
                                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
                                             <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-eye"></i></a></li>
                                         </ul>
-                                        <h5 class="price">₱70.00</h5>
-                                    </div>
+                                        <h5 class="price">₱ {{ $relatedProduct->price }}</h5>
                                     </div>
                                 </div>
-            </div>
-        </div>
+
+                            </div>
+                            @endforeach
+                    </div>
     </div>
+    @endif
+
+
+
 </section>
 
 

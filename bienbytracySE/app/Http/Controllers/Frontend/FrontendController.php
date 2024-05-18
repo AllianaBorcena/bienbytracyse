@@ -19,12 +19,14 @@ class FrontendController extends Controller
         'sliders',
         'categories'
     ));
+}
 
-    }
 
     function showProduct(string $slug): View {
-        $product = Product::where(['slug' => $slug, 'status'=>1])->firstOrFail();
-        return view ('frontend.pages.product-view', compact('product'));
+        $product = Product::with(['productImages', 'productIcing', 'productOption'])->where( ['slug' => $slug, 'status'=>1])->firstOrFail();
+        $relatedProducts = Product::where('category_id', $product->category_id)
+        ->where('id','!=', $product->id)->take(8)->latest()->get();
+        return view ('frontend.pages.product-view', compact('product', 'relatedProducts'));
     }
 }
 
