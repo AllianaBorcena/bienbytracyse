@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -26,21 +26,20 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
 </head>
 
-<body>
-    <section class="fp__topbar" style="background: #f8cfc9;">
+body>
+    <section class="fp__topbar" style="background:#f8cfc9;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-xl-6">
                     <ul class="d-flex flex-wrap fp__topbar_info">
-                        <li style="color: var(--colorBlack);"><i class="fas fa-envelope"></i><span
-                                style="color: rgb(0, 0, 0);">&nbsp;bienbytracy@gmail.com</span></li>
-                        <li><a><i class="fas fa-phone-alt" style="color: rgb(0,0,0);"></i> +96487452145214</a></li>
+                        <li style="color:var(--colorBlack);"><i class="fas fa-envelope"></i><span style="color:rgb(0, 0, 0);">&nbsp;bienbytracy@gmail.com</span></li>
+                        <li><a><i class="fas fa-phone-alt" style="color:rgb(0,0,0);"></i> +96487452145214</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xl-6 d-none d-md-block">
                     <ul class="d-flex flex-wrap topbar_icon">
-                        <li><i class="fab fa-facebook-f" style="margin: 10px;"></i></li>
-                        <li><i class="fab fa-instagram" style="margin: 10px;"></i></li>
+                        <li><i class="fab fa-facebook-f" style="margin:10px;"></i></li>
+                        <li><i class="fab fa-instagram" style="margin:10px;"></i></li>
                         <li></li>
                         <li></li>
                     </ul>
