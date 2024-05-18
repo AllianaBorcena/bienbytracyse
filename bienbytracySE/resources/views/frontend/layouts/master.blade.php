@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Bien By Tracy || Template</title>
+    <title>Bien By Tracy </title>
     <link rel="stylesheet" href="{{ asset('frontend/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/Font%20Awesome%205%20Brands.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/Font%20Awesome%205%20Free.css') }}">
@@ -33,7 +33,7 @@ body>
                 <div class="col-md-8 col-xl-6">
                     <ul class="d-flex flex-wrap fp__topbar_info">
                         <li style="color:var(--colorBlack);"><i class="fas fa-envelope"></i><span style="color:rgb(0, 0, 0);">&nbsp;bienbytracy@gmail.com</span></li>
-                        <li><a><i class="fas fa-phone-alt" style="color:rgb(0,0,0);"></i> +96487452145214</a></li>
+                        <li><a><i class="fas fa-phone-alt" style="color:rgb(0,0,0);"></i> +999999999</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xl-6 d-none d-md-block">
