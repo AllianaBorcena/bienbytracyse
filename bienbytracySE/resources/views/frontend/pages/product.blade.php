@@ -17,10 +17,8 @@
         <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
             <div class="row">
                 <div class="col-md-6 col-xl-6">
-                    <input type="text" class="form-control" placeholder="Search" name="search" value="{{ @request()->search }}">
-                </div>
-                <div class="col-md-4 col-xl-4">
-                    <select class="form-control nice-select" name="category">
+                    <input type="text" class="form-control" placeholder="Search" name="search" value="{{ @request()->search }}"></div>
+                <div class="col-md-4 col-xl-4"><select id="select_js3" name="category">
                         <option value="">All</option>
                         @foreach ($categories as $category)
                             <option @selected(@request()->category == $category->slug) value="{{ $category->slug }}">{{ $category->name }}</option>
@@ -41,14 +39,16 @@
                         <a class="category" href="#" style="color: rgb(0,0,0);font-family: 'Open Sans', sans-serif;font-weight: bold;">{{@$product->category->name }}</a>
                     </div>
                     <div class="fp__menu_item_text">
-                        <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>10</span></p>
-                        <a class="title" href="{{ route('product.show', $product->slug) }}" style="color: rgb(0,0,0);">{{ $product->name }}</a>
-                        <h5 class="price">₱{{ $product->price }}</h5>
-                        <ul class="d-flex flex-wrap" style="margin-left: 56px;">
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
-                            <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
-                        </ul>
-                    </div>
+                                <p class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i><span>10</span></p>
+                                <a class="title" href="{{ route('product.show', $product->slug) }}" style="color: rgb(0,0,0);">{{ $product->name }}</a>
+                                <h5 class="price">
+                                    ₱{{ $product->price }}</h5>
+                                    <ul class="d-flex flex-wrap align-items-center" style="margin-left: 56px;">
+                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49); display: inline-block; padding: 8px;"><i class="fas fa-shopping-basket" style="vertical-align: middle;"></i></a></li>
+                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49); display: inline-block; padding: 8px;"><i class="fas fa-heart" style="vertical-align: middle;"></i></a></li>
+                                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49); display: inline-block; padding: 8px;"><i class="fas fa-eye" style="vertical-align: middle;"></i></a></li>
+                                    </ul>
+                            </div>
                 </div>
             </div>
             @endforeach
