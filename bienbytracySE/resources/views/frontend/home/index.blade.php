@@ -6,9 +6,8 @@
 
 @include('frontend.home.components.whychoose')
 
-@include('frontend.home.components.offeritem')
+{{-- @include('frontend.home.components.offeritem') --}}
 
-@include('frontend.home.components.cartpopup')
 
 @include('frontend.home.components.menu')
 

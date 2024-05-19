@@ -23,10 +23,30 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/jquery.exzoom.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
 </head>
 
-body>
+<body>
+    <div>
+        <div class="overlay-container d-none">
+            <div class="overlay">
+                <span class="loader"></span>
+        </div>
+    </div>
+
+    <div class="fp__cart_popup">
+        <div class="modal fade" role="dialog" tabindex="-1" id="cartModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body load_product_modal_body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="fp__topbar" style="background:#f8cfc9;">
         <div class="container">
             <div class="row">
@@ -86,6 +106,8 @@ body>
             }
         });
     </script>
+    @include('frontend.layouts.global-scripts')
+
     @stack('scripts')
 </body>
 

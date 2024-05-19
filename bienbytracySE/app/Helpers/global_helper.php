@@ -2,6 +2,9 @@
 
 
 /**Slug */
+
+use Gloudemans\Shoppingcart\Facades\Cart;
+
 if(!function_exists('generateUniqueSlug')) {
     function generateUniqueSlug($model, $name): string
     {
@@ -20,5 +23,44 @@ if(!function_exists('generateUniqueSlug')) {
         }
 
         return $slug;
+    }
+}
+
+if(!function_exists('cartTotal')){
+    function cartTotal()
+    {
+        $total = 0;
+
+        foreach (Cart::content() as $item) {
+            $productPrice = $item->price;
+            $icingPrice = $item->options?->product_icing['price'] ?? 0;
+            $optionsPrice = 0;
+            foreach($item->options->product_options as $option){
+                $optionsPrice += $option['price'];
+            }
+
+            $total += ($productPrice + $icingPrice + $optionsPrice) * $item->qty;
+        }
+
+        return $total;
+    }
+}
+
+if(!function_exists('productTotal')){
+    function productTotal($rowId)
+    {
+        $total = 0;
+            $product = Cart::get($rowId);
+
+            $productPrice = $product->price;
+            $icingPrice = $product->options?->product_icing['price'] ?? 0;
+            $optionsPrice = 0;
+            foreach($product->options->product_options as $option){
+                $optionsPrice += $option['price'];
+            }
+
+            $total += ($productPrice + $icingPrice + $optionsPrice) * $product->qty;
+
+        return $total;
     }
 }
