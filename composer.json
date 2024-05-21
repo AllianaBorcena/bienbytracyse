@@ -1,5 +1,6 @@
 {
     "require": {
-        "anayarojo/shoppingcart": "^4.2"
+        "anayarojo/shoppingcart": "^4.2",
+        "yajra/laravel-datatables-oracle": "^10.11"
     }
 }

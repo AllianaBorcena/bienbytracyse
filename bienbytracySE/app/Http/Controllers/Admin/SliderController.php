@@ -15,26 +15,18 @@ use Illuminate\Http\Request;
 class SliderController extends Controller
 {
     use FileUploadTrait;
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index(SliderDataTable $dataTable)
     {
         return $dataTable->render('admin.slider.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(): View
     {
         return view('admin.slider.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(SliderCreateRequest $request)
+    public function store(SliderCreateRequest $request): RedirectResponse
     {
         $imagePath = $this->uploadImage($request, 'image');
 
@@ -49,35 +41,22 @@ class SliderController extends Controller
         $slider->save();
 
         toastr()->success('Created Successfully');
-        return redirect()->route('admin.slider.index');
+
+        return to_route('admin.slider.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(string $id): View
     {
         $slider = Slider::findOrFail($id);
         return view('admin.slider.edit', compact('slider'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(SliderUpdateRequest $request, string $id) : RedirectResponse
+    public function update(SliderUpdateRequest $request, string $id): RedirectResponse
     {
         $slider = Slider::findOrFail($id);
         $imagePath = $this->uploadImage($request, 'image', $slider->image);
 
-        $slider->image = !empty($imagePath) ? $imagePath : $slider->image;
+        $slider->image = $imagePath ?? $slider->image;
         $slider->offer = $request->offer;
         $slider->title = $request->title;
         $slider->sub_title = $request->sub_title;
@@ -91,11 +70,18 @@ class SliderController extends Controller
         return to_route('admin.slider.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(string $id): RedirectResponse
     {
-    
+        try {
+            $slider = Slider::findOrFail($id);
+            $this->removeImage($slider->image);
+            $slider->delete();
+
+            toastr()->success('Deleted Successfully');
+            return redirect()->back();
+        } catch (\Exception $e) {
+            toastr()->error('Something went wrong!');
+            return redirect()->back();
+        }
     }
 }

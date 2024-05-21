@@ -16,12 +16,29 @@
                 </div>
             </div>
             <div class="card-body">
-                {{ $dataTable->table() }}
+                <div id="slider-table-container">
+                    {{ $dataTable->table() }}
+                </div>
             </div>
         </div>
     </section>
 @endsection
 
 @push('scripts')
-    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+    <script>
+        $(document).ready(function() {
+            // Check if DataTable instance exists
+            var dataTableId = 'slider-table';
+            var dataTableContainer = $('#slider-table-container');
+
+            if ($.fn.DataTable.isDataTable('#' + dataTableId)) {
+                // Destroy existing DataTable instance
+                $('#' + dataTableId).DataTable().destroy();
+                // Reinitialize DataTable
+                dataTableContainer.html('{{ $dataTable->table() }}');
+            }
+        });
+    </script>
+    {{ $dataTable->scripts() }}
 @endpush
+

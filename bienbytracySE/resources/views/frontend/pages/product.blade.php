@@ -17,7 +17,7 @@
         <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
             <div class="row">
                 <div class="col-md-6 col-xl-6">
-                    <input type="text" class="form-control" placeholder="Search" name="search" value="{{ @request()->search }}"></div>
+                    <input type="text" class="form-control" placeholder="Search" name="search" value="{{ @request()->search  }}"></div>
                 <div class="col-md-4 col-xl-4"><select id="select_js3" name="category">
                         <option value="">All</option>
                         @foreach ($categories as $category)

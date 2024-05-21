@@ -26,9 +26,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 
-/** Slider Routes */
+    /** Slider Routes */
     Route::resource('slider', SliderController::class);
 
+    /**Why Choose Us Routes */
+    Route::put('why-choose-us-title-update', [WhyChooseUsController::class, 'updateTitle'])->name('why-choose-title.update');
     Route::resource('why-choose-us', WhyChooseUsController::class);
 
 
