@@ -7,15 +7,22 @@
     <title>General Dashboard &mdash; Stisla</title>
 
     <!-- General CSS Files -->
-    <link rel="stylesheet" href={{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}>
-    <link rel="stylesheet" href={{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}>
-    <link rel="stylesheet" href={{ asset('admin/assets/css/toastr.min.css') }}>
+    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}">
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/toastr.min.css') }}">
+
+    <!-- Other CSS Files -->
     <link rel="stylesheet" href="//cdn.datatables.net/2.0.6/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-iconpicker.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/summernote/summernote-bs4.css') }}">
+
     <!-- Template CSS -->
-    <link rel="stylesheet" href={{ asset('admin/assets/css/style.css') }}>
-    <link rel="stylesheet" href={{ asset('admin/assets/css/components.css') }}>
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/components.css') }}">
+
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
     <script>
@@ -62,28 +69,52 @@
     <script src="{{ asset('admin/assets/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
     <script src="{{ asset('admin/assets/js/stisla.js') }}"></script>
 
-    <script src="{{ asset('admin/assets/css/toastr.min.js') }}"></script>
+    <!-- Toastr JS -->
+    <script src="{{ asset('admin/assets/js/toastr.min.js') }}"></script>
+
+    <!-- Other JS Files -->
     <script src="{{ asset('admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/bootstrap-iconpicker.bundle.min.js') }}"></script>
     <script src="//cdn.datatables.net/2.0.6/js/dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('admin/assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
 
-
-
     <!-- Template JS File -->
     <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
     <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
 
+    <!-- Toastr Configuration -->
     <script>
-        toastr.options.progressBar = true;
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        @if (Session::has('success'))
+            toastr.success("{{ Session::get('success') }}");
+        @endif
 
         @if ($errors->any())
             @foreach ($errors->all() as $error)
-                toastr.error("{{ $error }}")
+                toastr.error("{{ $error }}");
             @endforeach
         @endif
     </script>
+
     @stack('scripts')
 
     <script>
@@ -118,14 +149,16 @@
                         $.ajax({
                             method: 'DELETE',
                             url: url,
-                            data: {_token: "{{ csrf_token() }}"},
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
                             success: function(response) {
-                                if(response.status === 'success'){
+                                if (response.status === 'success') {
                                     toastr.success(response.message)
 
                                     window.location.reload();
 
-                                }else if(response.status === 'error'){
+                                } else if (response.status === 'error') {
                                     toastr.error(response.message)
                                 }
                             },
@@ -138,10 +171,7 @@
             })
 
         })
-
     </script>
-    @stack('scripts')
-
 </body>
 
 </html>

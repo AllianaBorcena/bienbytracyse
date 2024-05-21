@@ -19,8 +19,9 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call(UserSeeder::class);
+        $this->call(WhyChooseUsTitleSeeder::class);
         \App\Models\Slider::factory(3)->create();
-        $this->call(WhyChooseUsSeeder::class);
+        \App\Models\WhyChooseUs::factory(3)->create();
 
         $this->call(CategorySeeder::class);
         \App\Models\Product::factory(10)->create();
