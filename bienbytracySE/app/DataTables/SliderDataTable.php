@@ -57,7 +57,7 @@ class SliderDataTable extends DataTable
             ->setTableId('slider-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->orderBy(1)
+            ->orderBy(1, 'asc')
             ->selectStyleSingle()
             ->buttons([
                 Button::make('excel'),

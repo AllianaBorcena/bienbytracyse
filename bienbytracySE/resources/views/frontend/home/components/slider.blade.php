@@ -18,9 +18,17 @@
                                         <h1>{{ $slider->title }}</h1>
                                         <h3>{{ $slider->sub_title }}</h3>
                                         <p>{{ $slider->description }}</p>
-                                        <ul class="d-flex flex-wrap">
-                                            <li><a class="common_btn" href="{{ $slider->button_link }}">Order Now</a></li>
-                                        </ul>
+                                        @if($slider->offer)
+                                            <p><strong>{{ $slider->offer }}</strong></p>
+                                        @endif
+                                        @if($slider->short_description)
+                                            <p>{{ $slider->short_description }}</p>
+                                        @endif
+                                        @if($slider->button_link)
+                                            <ul class="d-flex flex-wrap">
+                                                <li><a class="common_btn" href="{{ $slider->button_link }}">Order Now</a></li>
+                                            </ul>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -31,4 +39,5 @@
         </div>
     </div>
 </section>
+
 
