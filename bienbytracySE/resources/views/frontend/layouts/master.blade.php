@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Bien By Tracy || Template</title>
+    <title>Bien By Tracy </title>
     <link rel="stylesheet" href="{{ asset('frontend/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/Font%20Awesome%205%20Brands.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/Font%20Awesome%205%20Free.css') }}">
@@ -23,17 +23,37 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/jquery.exzoom.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
 </head>
 
-body>
+<body>
+    <div>
+        <div class="overlay-container d-none">
+            <div class="overlay">
+                <span class="loader"></span>
+        </div>
+    </div>
+
+    <div class="fp__cart_popup">
+        <div class="modal fade" role="dialog" tabindex="-1" id="cartModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body load_product_modal_body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="fp__topbar" style="background:#f8cfc9;">
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-xl-6">
                     <ul class="d-flex flex-wrap fp__topbar_info">
                         <li style="color:var(--colorBlack);"><i class="fas fa-envelope"></i><span style="color:rgb(0, 0, 0);">&nbsp;bienbytracy@gmail.com</span></li>
-                        <li><a><i class="fas fa-phone-alt" style="color:rgb(0,0,0);"></i> +96487452145214</a></li>
+                        <li><a><i class="fas fa-phone-alt" style="color:rgb(0,0,0);"></i> +999999999</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 col-xl-6 d-none d-md-block">
@@ -86,6 +106,8 @@ body>
             }
         });
     </script>
+    @include('frontend.layouts.global-scripts')
+
     @stack('scripts')
 </body>
 

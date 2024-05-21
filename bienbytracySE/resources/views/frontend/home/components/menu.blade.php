@@ -42,7 +42,7 @@
                                 <h5 class="price">
                                     ₱{{ $product->price }}</h5>
                                 <ul class="d-flex flex-wrap" style="margin-left: 56px;">
-                                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
+                                    <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')" style="background: rgb(150,103,49);"><i class="fas fa-shopping-basket"></i></a></li>
                                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-heart"></i></a></li>
                                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#cartModal" style="background: rgb(150,103,49);"><i class="fas fa-eye"></i></a></li>
                                 </ul>

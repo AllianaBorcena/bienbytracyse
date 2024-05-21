@@ -3,8 +3,8 @@
         <div class="container wow fadeInUp" data-wow-duration="1s">
             <div class="row justify-content-between">
                 <div class="col-sm-8 col-md-6 col-lg-4">
-                    <div class="fp__footer_content"><a class="footer_logo" href="index.html"><img class="img-fluid w-100" src="assets/img/logo.png" alt="FoodPark" width="150" height="150"></a><span style="color:rgb(0,0,0);">There are many variations of Lorem Ipsum available, but the majority have suffered.</span>
-                        <p class="info" style="color:rgb(0,0,0);"><i class="far fa-map-marker-alt"></i> 7232 Broadway Suite 308, Jackson Heights, 11372, NY, United States</p><a class="info" style="color:rgb(0,0,0);"><i class="fas fa-phone-alt"></i> +1347-430-9510</a><a class="info" href="mailto:websolutionus1@gmail.com" style="color:rgb(0,0,0);"><i class="fas fa-envelope"></i>bienbytracy@gmail.com</a>
+                    <div class="fp__footer_content"><a class="footer_logo" href="index.html"><img class="img-fluid w-100" src="{{ asset('frontend/img/logo.png') }}"alt="bien by tracy" width="150" height="150"></a><span style="color:rgb(0,0,0);">There are many variations of Lorem Ipsum available, but the majority have suffered.</span>
+                        <p class="info" style="color:rgb(0,0,0);"><i class="far fa-map-marker-alt"></i> 7232 Broadway Suite 308, Jackson Heights, 11372, NY, United States</p><a class="info" style="color:rgb(0,0,0);"><i class="fas fa-phone-alt"></i> +9999999</a><a class="info" href="mailto:websolutionus1@gmail.com" style="color:rgb(0,0,0);"><i class="fas fa-envelope"></i>bienbytracy@gmail.com</a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-md-6 col-lg-2">
