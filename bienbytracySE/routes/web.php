@@ -38,8 +38,12 @@ Route::group(['middleware' => 'auth'], function(){
 Route::get('/product', [FrontendController::class, 'product'])->name('product.index');
 
 
-Route::get('/', [FrontendController::class, 'index'])->name('home');
-
 
 require __DIR__.'/auth.php';
+
+/**Home Page */
+Route::get('/', [FrontendController::class, 'index'])->name('home');
+
+/**Product Details */
+Route::get('/product/{slug}', [FrontendController::class, 'showProduct'])->name('product.show');
 

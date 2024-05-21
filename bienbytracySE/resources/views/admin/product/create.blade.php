@@ -11,7 +11,6 @@
             <h4>Create Product</h4>
 
         </div>
-
         <div class="card-body">
             <form action="{{ route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
